@@ -1,0 +1,253 @@
+:root {
+    --text: #000000;
+    --background: #ffffff;
+    --primary: #8a4bcc;
+    --accent: #dae2e6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    background-color: var(--primary);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+
+
+.logo {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.spin-on-hover:hover {
+    transform: rotate(-360deg);
+    transition: transform 2s;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+}
+
+nav a:hover {
+    opacity: 0.50;
+}
+
+.checkbox,
+.checkbtn {
+    display: none;
+}
+
+main {
+    flex: 1;
+    overflow-x: hidden;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.sliding-text {
+    width: 100%;
+    font-size: 3rem;
+    animation: change-width 2.5s cubic-bezier(0.64, 0, 0.78, 0);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes change-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+footer {
+    background-color: var(--primary);
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 1rem;
+}
+
+footer a {
+    color: var(--text);
+    font-size: 2rem;
+}
+
+
+/* EVERY THING BEFORE HERE APPLIES TO SCREENS > 1200px WIDE (Desktop) */
+@media (max-width: 1200px) {
+
+    /* 770px - 1200px WIDE (iPad Pro)*/
+    .hero {
+        padding: 0.25rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .hero img {
+        width: 60%;
+        height: auto;
+    }
+
+    .sliding-text {
+        width: 100%;
+        font-size: 5rem;
+        animation: change-width 2.5s cubic-bezier(0.64, 0, 0.78, 0);
+        margin: 0;
+        white-space: wrap;
+        overflow: hidden;
+        padding: 0 0.5rem;
+    }
+
+    @keyframes change-width {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    /* 577px - 768 WIDE (iPad Mini) */
+
+}
+
+@media (max-width: 576px) {
+    /* < 577px WIDE (iPhone Pro)*/
+
+    .hero {
+        padding: 0.25rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        padding: 4px;
+    }
+
+    .nav-main {
+        display: none;
+        position: absolute;
+        top: 3rem;
+        right: -500px;
+    }
+
+    nav a {
+        font-weight: 700;
+    }
+
+    .checkbox,
+    .checkbtn {
+        display: unset;
+    }
+
+    .checkbox {
+        visibility: hidden;
+    }
+
+    .checkbtn {
+        padding: 8px;
+    }
+
+    #check:checked~.nav-main {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary);
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        padding: 1rem;
+        filter: brightness(85%);
+        align-items: start;
+    }
+
+    .sliding-text {
+        width: 100%;
+        font-size: 3rem;
+        animation: change-width 2.5s cubic-bezier(0.64, 0, 0.78, 0);
+        margin: 0;
+        white-space: wrap;
+        overflow: hidden;
+        padding: 0 0.5rem;
+    }
+
+    @keyframes change-width {
+        0% {
+            transform: translateX(500px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+}

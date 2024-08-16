@@ -1,0 +1,22 @@
+article {
+    background-color: var(--background);
+    border: solid var(--text);
+    margin: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    padding: 0 24px 24px;
+}
+
+.journey-image img {
+    width: 200px;
+    height: 200px;
+    padding: 24px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
